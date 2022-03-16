@@ -20,7 +20,6 @@
 package io.wcm.maven.release.policies.aemclouddeps;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.apache.maven.shared.release.policy.PolicyException;
 import org.apache.maven.shared.release.policy.version.VersionPolicyRequest;
@@ -41,13 +40,13 @@ class AemCloudDependenciesVersionPolicyTest {
   }
 
   @Test
-  void testGetReleaseVersion_NotSnapshot() {
+  void testGetReleaseVersion_NotSnapshot() throws PolicyException, VersionParseException {
     VersionPolicyRequest request = new VersionPolicyRequest()
         .setVersion("2022.2.6276.20220205T222203Z-220100.0001");
 
-    assertThrows(PolicyException.class, () -> {
-      new AemCloudDependenciesVersionPolicy().getReleaseVersion(request);
-    });
+    VersionPolicyResult result = new AemCloudDependenciesVersionPolicy().getReleaseVersion(request);
+
+    assertEquals("2022.2.6276.20220205T222203Z-220100.0001", result.getVersion());
   }
 
   @Test
@@ -61,13 +60,13 @@ class AemCloudDependenciesVersionPolicyTest {
   }
 
   @Test
-  void testGetDevelopmentVersion_Snapshot() {
+  void testGetDevelopmentVersion_Snapshot() throws PolicyException, VersionParseException {
     VersionPolicyRequest request = new VersionPolicyRequest()
         .setVersion("2022.2.6276.20220205T222203Z-220100.0002-SNAPSHOT");
 
-    assertThrows(PolicyException.class, () -> {
-      new AemCloudDependenciesVersionPolicy().getDevelopmentVersion(request);
-    });
+    VersionPolicyResult result = new AemCloudDependenciesVersionPolicy().getDevelopmentVersion(request);
+
+    assertEquals("2022.2.6276.20220205T222203Z-220100.0003-SNAPSHOT", result.getVersion());
   }
 
 }

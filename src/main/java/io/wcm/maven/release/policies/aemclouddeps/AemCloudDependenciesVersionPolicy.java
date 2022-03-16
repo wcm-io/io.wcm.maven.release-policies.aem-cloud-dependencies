@@ -45,10 +45,6 @@ public class AemCloudDependenciesVersionPolicy implements VersionPolicy {
   public VersionPolicyResult getReleaseVersion(VersionPolicyRequest request) throws PolicyException, VersionParseException {
     AemCloudDepsVersion version = AemCloudDepsVersion.parse(request.getVersion());
 
-    if (!version.isSnapshot()) {
-      throw new PolicyException("Version is not a snapshot version: " + request.getVersion());
-    }
-
     // return same version without snapshot
     return new VersionPolicyResult().setVersion(
         new AemCloudDepsVersion(version.getAemVersion(), version.getVersionSuffix(), false).toString());
@@ -57,10 +53,6 @@ public class AemCloudDependenciesVersionPolicy implements VersionPolicy {
   @Override
   public VersionPolicyResult getDevelopmentVersion(VersionPolicyRequest request) throws PolicyException, VersionParseException {
     AemCloudDepsVersion version = AemCloudDepsVersion.parse(request.getVersion());
-
-    if (version.isSnapshot()) {
-      throw new PolicyException("Version is not a release version: " + request.getVersion());
-    }
 
     // increment version suffix and add snapshot
     return new VersionPolicyResult().setVersion(
