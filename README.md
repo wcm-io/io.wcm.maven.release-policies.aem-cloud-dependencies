@@ -5,7 +5,7 @@
 
 Manages release versionining of https://github.com/wcm-io/io.wcm.maven.aem-cloud-dependencies
 
-Issues: https://wcm-io.atlassian.net/browse/WTOOL<br/>
+Issues: https://github.com/wcm-io/io.wcm.maven.release-policies.aem-cloud-dependencies/issues<br/>
 Wiki: https://wcm-io.atlassian.net/wiki/<br/>
 Continuous Integration: https://github.com/wcm-io/io.wcm.maven.release-policies.aem-cloud-dependencies/actions<br/>
 Commercial support: https://wcm.io/commercial-support.html
