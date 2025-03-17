@@ -7,6 +7,7 @@
   ],
   "ignoreDeps": [
     "org.apache.maven.release:maven-release-api",
+    "org.codehaus.plexus:plexus-component-metadata",
     "org.codehaus.plexus:plexus-component-annotations"
   ]
 }
