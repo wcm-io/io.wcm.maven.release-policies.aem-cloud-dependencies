@@ -25,13 +25,13 @@
   <parent>
     <groupId>io.wcm.maven</groupId>
     <artifactId>io.wcm.maven.parent</artifactId>
-    <version>2.2.6</version>
+    <version>2.3.0-SNAPSHOT</version>
     <relativePath />
   </parent>
 
   <groupId>io.wcm.maven.release-policies</groupId>
   <artifactId>io.wcm.maven.release-policies.aem-cloud-dependencies</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>wcm.io Maven Release Policy for AEM Cloud Dependencies</name>
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.codehaus.plexus</groupId>
       <artifactId>plexus-component-annotations</artifactId>
-      <version>2.0.0</version>
+      <version>2.2.0</version>
       <scope>provided</scope>
     </dependency>
 
@@ -74,7 +74,7 @@
       <plugin>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-component-metadata</artifactId>
-        <version>2.0.0</version>
+        <version>2.2.0</version>
         <executions>
           <execution>
             <id>process-classes</id>
