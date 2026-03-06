@@ -32,7 +32,7 @@ class AemCloudDependenciesVersionPolicyTest {
   @Test
   void testGetReleaseVersion() throws PolicyException, VersionParseException {
     VersionPolicyRequest request = new VersionPolicyRequest()
-        .setVersion("2022.2.6276.20220205T222203Z-220100.0001-SNAPSHOT");
+      .setVersion("2022.2.6276.20220205T222203Z-220100.0001-SNAPSHOT");
 
     VersionPolicyResult result = new AemCloudDependenciesVersionPolicy().getReleaseVersion(request);
 
@@ -42,7 +42,7 @@ class AemCloudDependenciesVersionPolicyTest {
   @Test
   void testGetReleaseVersion_NotSnapshot() throws PolicyException, VersionParseException {
     VersionPolicyRequest request = new VersionPolicyRequest()
-        .setVersion("2022.2.6276.20220205T222203Z-220100.0001");
+      .setVersion("2022.2.6276.20220205T222203Z-220100.0001");
 
     VersionPolicyResult result = new AemCloudDependenciesVersionPolicy().getReleaseVersion(request);
 
@@ -52,7 +52,7 @@ class AemCloudDependenciesVersionPolicyTest {
   @Test
   void testGetDevelopmentVersion() throws PolicyException, VersionParseException {
     VersionPolicyRequest request = new VersionPolicyRequest()
-        .setVersion("2022.2.6276.20220205T222203Z-220100.0001");
+      .setVersion("2022.2.6276.20220205T222203Z-220100.0001");
 
     VersionPolicyResult result = new AemCloudDependenciesVersionPolicy().getDevelopmentVersion(request);
 
@@ -62,7 +62,7 @@ class AemCloudDependenciesVersionPolicyTest {
   @Test
   void testGetDevelopmentVersion_Snapshot() throws PolicyException, VersionParseException {
     VersionPolicyRequest request = new VersionPolicyRequest()
-        .setVersion("2022.2.6276.20220205T222203Z-220100.0002-SNAPSHOT");
+      .setVersion("2022.2.6276.20220205T222203Z-220100.0002-SNAPSHOT");
 
     VersionPolicyResult result = new AemCloudDependenciesVersionPolicy().getDevelopmentVersion(request);
 
